@@ -1,0 +1,48 @@
+[
+  {
+    "name": "chat_sessions",
+    "fields": [
+      {
+        "name": "title",
+        "type": "text",
+        "description": "Title of the chat session",
+        "options": null
+      },
+      {
+        "name": "language",
+        "type": "text",
+        "description": "Language code (en/ta) for this session",
+        "options": null
+      }
+    ]
+  },
+  {
+    "name": "chat_messages",
+    "fields": [
+      {
+        "name": "sessionId",
+        "type": "text",
+        "description": "ID of the session this message belongs to",
+        "options": null
+      },
+      {
+        "name": "role",
+        "type": "text",
+        "description": "Sender role: user or ai",
+        "options": null
+      },
+      {
+        "name": "content",
+        "type": "text",
+        "description": "Message content",
+        "options": null
+      },
+      {
+        "name": "isError",
+        "type": "bool",
+        "description": "Whether this message represents an error",
+        "options": null
+      }
+    ]
+  }
+]

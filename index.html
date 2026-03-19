@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeGen AI - Tamil & English</title>
+    <meta name="description" content="AI-powered code generator with multi-language support including Tamil.">
+    <meta name="keywords" content="AI, code generator, chatgpt alternative, tamil, programming">
+    <meta property="og:title" content="CodeGen AI">
+    <meta property="og:description" content="AI-powered code generator with multi-language support.">
+    <meta name="twitter:title" content="CodeGen AI">
+    <meta name="twitter:description" content="AI-powered code generator with multi-language support.">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-tertiary: #f3f4f6;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border: #e5e7eb;
+        }
+
+        .dark {
+            --bg-primary: #111827; /* gray-900 */
+            --bg-secondary: #1f2937; /* gray-800 */
+            --bg-tertiary: #374151; /* gray-700 */
+            --text-primary: #f9fafb; /* gray-50 */
+            --text-secondary: #9ca3af; /* gray-400 */
+            --accent: #3b82f6; /* blue-500 */
+            --accent-hover: #2563eb; /* blue-600 */
+            --border: #374151; /* gray-700 */
+        }
+    }
+
+    @layer base {
+        body {
+            @apply bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-200;
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] px-4 py-2 rounded-lg transition-colors font-medium flex items-center justify-center gap-2;
+        }
+        .btn-ghost {
+            @apply hover:bg-[var(--bg-tertiary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] px-3 py-2 rounded-lg transition-colors flex items-center gap-2;
+        }
+        .input-field {
+            @apply w-full bg-[var(--bg-primary)] border border-[var(--border)] rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] text-[var(--text-primary)] placeholder-[var(--text-secondary)];
+        }
+    }
+
+    @layer utilities {
+        /* Custom scrollbar for code blocks */
+        .scrollbar-thin::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: var(--border);
+            border-radius: 4px;
+        }
+    }
+    </style>
+</head>
+<body class="dark h-full"> <!-- Default to dark mode for coding env feel -->
+    <div id="root" class="h-full"></div>
+    
+    <!-- Utilities -->
+    <script type="text/babel" src="utils/i18n.js"></script>
+    <script type="text/babel" src="utils/helpers.js"></script>
+    <script type="text/babel" src="utils/db.js"></script>
+
+    <!-- Components -->
+    <script type="text/babel" src="components/Sidebar.js"></script>
+    <script type="text/babel" src="components/MessageItem.js"></script>
+    <script type="text/babel" src="components/ChatInterface.js"></script>
+
+    <!-- Main App -->
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
